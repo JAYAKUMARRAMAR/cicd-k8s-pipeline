@@ -13,8 +13,8 @@ pipeline {
 				script{
 					docker.withRegistry('','jenkins-token'){
 					dockerImage.push();
-					dockerImage.push('latest');
-			}
+					dockerImage.push('latest'); }
 	  }
 	 }
 }
+}}
