@@ -3,18 +3,19 @@ pipeline {
 	stages {
 	stage('Build Docker Image'){
 	   steps {
-			script{
-				dockerImage = docker.build("jayakumarramar/cicd-k8s-pipeline:${env.BUILD_TAG}")
-			}
+		   sh "docker build -t "jayakumarramar/cicd-k8s-pipeline:$env.BUILD_TAG"
+			// script{
+			// 	dockerImage = docker.build("jayakumarramar/cicd-k8s-pipeline:${env.BUILD_TAG}")
+			// }
 	  }
 	 }
-		stage('push Docker Image'){
-			steps {
-				script{
-					docker.withRegistry('','jenkins-token'){
-					dockerImage.push();
-					dockerImage.push('latest'); }
-	  }
-	 }
-}
+// 		stage('push Docker Image'){
+// 			steps {
+// 				script{
+// 					docker.withRegistry('','jenkins-token'){
+// 					dockerImage.push();
+// 					dockerImage.push('latest'); }
+// 	  }
+// 	 }
+// }
 }}
