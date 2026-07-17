@@ -1,7 +1,7 @@
 //generate declarative pipeline for jenkins
 pipeline {
 	agent any
-	// stages {
+	 stages {
 	// 	stage('Build') {
 	// 		steps {
 	// 			echo 'Building...'
@@ -20,7 +20,6 @@ pipeline {
 	// 			// Add deploy steps here
 	// 		}
 	// 	}
-	// }
 	post{
 		always{
 			enho 'I am awesome. I run always'
@@ -31,5 +30,6 @@ pipeline {
 		failure{
 			echo 'I run when you are failed'
 		}
+	}
 	}
 }
