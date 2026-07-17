@@ -5,8 +5,7 @@ pipeline {
 	   steps {
 		   sh "docker build -t "jayakumarramar/cicd-k8s-pipeline:$env.BUILD_TAG"
 			// script{
-			// 	dockerImage = docker.build("jayakumarramar/cicd-k8s-pipeline:${env.BUILD_TAG}")
-			// }
+			// 	dockerImage = docker.build("jayakumarramar/cicd-k8s-pipeline:${env.BUILD_TAG}") }
 	  }
 	 }
 // 		stage('push Docker Image'){
@@ -18,4 +17,5 @@ pipeline {
 // 	  }
 // 	 }
 // }
-}}
+}
+}
